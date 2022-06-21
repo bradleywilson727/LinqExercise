@@ -77,6 +77,7 @@ namespace LinqExercise
             //TODO: Change the value at index 4 to your age, then print the numbers in decsending order
 
             numbers[4] = 34;
+            //OR: numbers.SetValue(34, 4);
 
             var newDescendingOrder = numbers.OrderByDescending(x => x);
             foreach(int num in newDescendingOrder)
@@ -115,7 +116,10 @@ namespace LinqExercise
             //equal to 10 AND Age is greater than 35
 
             var sumAndAverage = employees.Where(x => x.YearsOfExperience <= 10 && x.Age > 35);
-            Console.WriteLine();
+            Console.WriteLine(sumAndAverage.Sum(x => x.YearsOfExperience));
+            Console.WriteLine(sumAndAverage.Average(x => x.YearsOfExperience));
+
+            Console.WriteLine("-------------------------");
 
             //TODO: Add an employee to the end of the list without using employees.Add()
 
